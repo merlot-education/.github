@@ -12,7 +12,7 @@ Download and install Virtualbox 7.0.8 from: https://www.virtualbox.org/wiki/Down
 
 ## Operating system
 
-Download and install [Ubuntu 22.04.2 LTS](https://releases.ubuntu.com/jammy/) and check for the latest updates.
+Download and install [Ubuntu 22.04 LTS](https://ubuntu.com/download/desktop/) and check for the latest updates.
 
 ```bash
 sudo apt update
@@ -20,11 +20,16 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
+Install VirtualBox Guest Extensions
+```bash
+sudo apt-get install -y  virtualbox-guest-additions-iso
+```
+
 ### git
 Install git from the Ubuntu repository. 
 
 ```bash
-sudo apt install git
+sudo apt install -y git
 ```
 
 ### Node.js LTS (18.X)
@@ -38,25 +43,31 @@ sudo snap install --classic node 
 Install Python with pip from the Ubuntu repository.
 
 ```bash
-sudo apt install python3 
-sudo apt install python3-pip
+sudo apt install -y python3 
+sudo apt install -y python3-pip
 ```
 
 ### Docker
 Install Docker with the following script. 
 
 ```bash
-sudo apt-get install ca-certificates curl gnupg
+sudo apt-get install -y ca-certificates curl gnupg
+
 sudo install -m 0755 -d /etc/apt/keyrings
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
+
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
+
 sudo usermod -aG docker $USER
 sudo reboot
 ```
@@ -65,8 +76,8 @@ sudo reboot
 Install the OpenJDK SDKs from the Ubuntu repository.
 
 ```bash
-sudo apt install openjdk-11-jdk openjdk-17-jdk openjdk-18-jdk
-sudo apt install maven
+sudo apt install -y openjdk-11-jdk openjdk-17-jdk openjdk-18-jdk
+sudo apt install -y maven
 
 sudo update-alternatives --config java
 ```
@@ -75,7 +86,7 @@ sudo update-alternatives --config java
 Install the VS Code snap with the following extensions.
 
 ```bash
-sudo snap install code
+sudo snap install --classic code
 ```
 
  * NuGet Package Manager GUI - aliasadidev
