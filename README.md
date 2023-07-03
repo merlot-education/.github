@@ -13,7 +13,7 @@ Even if we work with Ubuntu, it should work with Windows or MacOS, as well as ot
 All steps to setup the project locally are explained [here](Docs/SetupLocal.md)
 
 ## REST API
-All APIs of the orchestrators are described in the [REST API](Docs/API/RestAPI.md) documentation. (coming coon)
+All APIs of the orchestrators are described in the [REST API](Docs/API/RestAPI.md) documentation. (coming soon)
  * aaam-orchestrator
  * organisations-orchestrator
  * serviceoffering-orchestrator
