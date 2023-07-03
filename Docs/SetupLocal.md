@@ -116,7 +116,7 @@ docker-compose up
 
 ### Gaia-X Federated Catalog
 
-Build the signer tool
+Build the signer tool **with the changes from the snippet comment**.
 
 ```bash
 cd ~/Documents/GitLab/signer
@@ -154,7 +154,7 @@ python3 add_orgas_to_catalog.py
 ### The Marketplace (Angular JS/Node)
 ```bash
 npm install
-ng update
+ng serve
 ```
 
 ### Orchestrators (Java)
