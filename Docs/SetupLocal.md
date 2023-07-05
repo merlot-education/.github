@@ -197,3 +197,6 @@ export KEYCLOAK_CLIENT-SECRET=Top$ecret!123
 mvn clean install
 mvn spring-boot:run
 ```
+
+## Snapshot
+If everything works, don`t forget to make a snapshot of the VM.
