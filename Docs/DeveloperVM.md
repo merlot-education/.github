@@ -105,6 +105,12 @@ Download and install GitHub Desktop for Linux from: https://github.com/shiftkey/
 ### Google Chrome
 Download and install Google Chrome from: https://www.google.com/chrome/
 
+### Angular tools
+```
+npm install -g @angular/cli
+
+```
+
 ### The ***hosts*** file
 For the GXFS catalog, add the one entry to your `/etc/hosts` file, wich points key-server to 127.0.0.1.
 
