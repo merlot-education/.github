@@ -89,7 +89,6 @@ Install the VS Code snap with the following extensions.
 sudo snap install --classic code
 ```
 
- * NuGet Package Manager GUI - aliasadidev
  * Live Share  - Microsoft
  * ESLint - Microsoft
  * Python- Microsoft
