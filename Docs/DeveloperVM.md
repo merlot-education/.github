@@ -106,9 +106,8 @@ Download and install GitHub Desktop for Linux from: https://github.com/shiftkey/
 Download and install Google Chrome from: https://www.google.com/chrome/
 
 ### Angular tools
-```
+```bash
 npm install -g @angular/cli
-
 ```
 
 ### The ***hosts*** file

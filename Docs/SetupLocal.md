@@ -114,6 +114,20 @@ docker kill $(docker ps -q)
 docker-compose up
 ```
 
+Create an user in the POC1 realm and assing it to one or more of the roles in that realm. e. g. `OrgLegRep_10`, `OrgLegRep_30`.
+This will be your marketplace user.
+
+### SD Creation Wizard API
+
+```bash
+cd ~/Documents/GitLab/sd-creation-wizard-api
+
+mvn clean install
+docker build -t springio/gs-spring-boot-docker .
+docker run -p 8080:8085 springio/gs-spring-boot-docker
+```
+
+
 ### Gaia-X Federated Catalog
 
 Build the signer tool **with the changes from the snippet comment**.
@@ -200,3 +214,26 @@ mvn spring-boot:run
 
 ## Snapshot
 If everything works, don`t forget to make a snapshot of the VM.
+
+## IP Ports overview
+
+### localdeployment (required services)
+| Port | Service                | Description      |
+| ---- | ---------------------- | ---------------- |
+| 8080 | keycloak               | (HTTP) SSO       |
+| XXXX | neo4j                  |                  |
+| 5432 | postgres               |                  |
+| 5672 | rabitmq                |                  |
+| 8081 | fc-service             |                  |
+| ---- | ---------------------- |                  |
+| 8085 | sd-creation-wizard-api | (HTTP)           |
+
+### Marketplace
+
+| Port | Service                          | Description |
+| ---- | -------------------------------- | ----------- |
+| 4200 | marketplace                      | (HTTP)      |
+| 8082 | organisations-orchestrator       | (HTTP)      |
+| 8083 | aaam-orchestrator                | (HTTP)      |
+| 8084 | serviceoffering-orchestrator     | (HTTP)      |
+| 8086 | contracts-orchestrator           | (HTTP)      |
