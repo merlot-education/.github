@@ -124,7 +124,7 @@ cd ~/Documents/GitLab/sd-creation-wizard-api
 
 mvn clean install
 docker build -t springio/gs-spring-boot-docker .
-docker run -p 8080:8085 springio/gs-spring-boot-docker
+docker run -p 8085:8080 springio/gs-spring-boot-docker
 ```
 
 
