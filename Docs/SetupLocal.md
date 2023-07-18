@@ -89,7 +89,7 @@ Create a folder for persisting docker data:
 
 ```
 mkdir docker_data
-chmod 777 docker_data
+sudo chmod 777 docker_data
 ```
 
 This compose file also assumes that the orchestrator repos are cloned "next to" the localdeployment repo in order to allow for changes to the code.
