@@ -62,9 +62,10 @@ git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/cat/
 ### SD Creation Wizard API/Frontend (Initial Setup)
  ```bash
 cd ~/Documents/GitLab
-git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/self-description-tooling/sd-creation-wizard/sd-creation-wizard-api
+git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-api
 
-git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/self-description-tooling/sd-creation-wizard/sd-creation-wizard-frontend
+
+git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-frontend
  ```
 
 ### GXFS Example Workflows (Initial Setup)
@@ -82,6 +83,18 @@ git clone https://github.com/merlot-education/service-characteristics
  ```
 
 ## Initial setup for required serives (localdeployment)
+### Preparation (See Readme.md)
+
+Create a folder for persisting docker data:
+
+```
+mkdir docker_data
+chmod 777 docker_data
+```
+
+This compose file also assumes that the orchestrator repos are cloned "next to" the localdeployment repo in order to allow for changes to the code.
+
+
 Start the docker deployment
 ```bash
 cd ~/Documents/GitHub/localdeployment
@@ -118,10 +131,10 @@ Create an user in the POC1 realm and assing it to one or more of the roles in th
 This will be your marketplace user.
 
 ### SD Creation Wizard API
-
+(check after migration to Eclipse, try newest relese)
 ```bash
 cd ~/Documents/GitLab/sd-creation-wizard-api
-
+git checkout ed958790fb14bd424e4148e7034195fa803d939c 
 mvn clean install
 docker build -t springio/gs-spring-boot-docker .
 docker run -p 8085:8080 springio/gs-spring-boot-docker
