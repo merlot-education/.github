@@ -1,13 +1,10 @@
 # Get Started with MERLOT 🍇
 
-## Setup development environment
+## Setup development 
 
-### VM Setup
-To provide a unified developer expierience we are working with a dedicated MERLOT developer VM and all documentation is refering to this machine.
+### 🐧 Setup WSL 
 
-[Developer VM Docs](Docs/DeveloperVM.md)
-
-Even if we work with Ubuntu, it should work with Windows or MacOS, as well as other Linux distributions.
+[Developer WSL Docs](Docs/WSL.md)
 
 ### Setup locally
 All steps to setup the project locally are explained [here](Docs/SetupLocal.md)
