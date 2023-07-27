@@ -2,6 +2,8 @@
 
 ## Clone repositories
 
+⚠ Work from the WSL 
+
 ### localdeployment (Required serives)
 All required (background) services to run MERLOT are bundled in the [localdeployment](https://github.com/merlot-education/localdeployment) repository *(coming soon)*
 

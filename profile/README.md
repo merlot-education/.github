@@ -2,6 +2,8 @@
 
 ## Setup development 
 
+With POC2, MERLOT switched to WSL
+
 ### 🐧 Setup WSL 
 
 [Developer WSL Docs](Docs/WSL.md)
@@ -11,6 +13,7 @@ All steps to setup the project locally are explained [here](Docs/SetupLocal.md)
 
 ## REST API
 All APIs of the orchestrators are described in the [REST API](Docs/API/RestAPI.md) documentation. (coming soon)
+
  * aaam-orchestrator
  * organisations-orchestrator
  * serviceoffering-orchestrator

@@ -20,7 +20,8 @@ echo "[user]" > /etc/wsl.conf
 echo "default=shoyer" >> /etc/wsl.conf
 
 sudo apt install openjdk-17-jdk openjdk-17-jre maven
-sudo apt install gnupg2 software-properties-common
+sudo apt install gnupg2 software-properties-common git git-lfs keychain
+
 sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -29,10 +30,10 @@ echo \
 "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
 "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo apt install git git-lfs
-sudo apt install keychain
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
 
 sudo usermod -a -G docker shoyer
 
@@ -47,6 +48,9 @@ echo 'fi' >> ~/.bashrc
 cd /home/shoyer
 mkdir workspace
 export MERLOT_WORKSPACE=/home/shoyer/workspace
+
+
+npm install -g @angular/cli@latest
 ```
 
 ## Visual Studio Code
@@ -60,14 +64,18 @@ https://code.visualstudio.com/download
  * Angular Language Service
  * Prettier - Code Formatter - Prettier
 
+Once you checked out the code, just open VS Code from WSL
  ```
+ shoyer@CE58704:~/workspace/marketplace$ code .
  ```
+
+![VS Code WSL](../assets/VSCode_WSL.PNG)
 
 ## IntelliJ
 
 https://www.jetbrains.com/de-de/idea/download/?section=windows 
 
-![image](../assets/IntelliJ_OpenFileOrProject.PNG)
+![IntelliJ Open File or Project WSL](../assets/IntelliJ_OpenFileOrProject.PNG)
 
 
 
