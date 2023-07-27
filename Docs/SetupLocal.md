@@ -125,9 +125,15 @@ FC_CLIENT_SECRET=Top$ecret!123
 ```
 
 Restart the localdeployment
+
+(services as parameters)
+
+* keycloak
+
+
 ```bash
 docker kill $(docker ps -q)
-docker-compose up
+docker-compose up service1 service2 ...
 ```
 
 Create an user in the POC1 realm and assing it to one or more of the roles in that realm. e. g. `OrgLegRep_10`, `OrgLegRep_30`.
