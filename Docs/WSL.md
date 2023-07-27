@@ -1,12 +1,18 @@
 # Setup Windows-Subsystem für Linux (WSL)
 
+Download: [Ubuntu WSL Image](https://cloud-images.ubuntu.com/wsl/jammy/current/ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz)
+
 ```
 wsl.exe --import merlot D:\WSL\MERLOT  .\ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz
 
 usermod -a -G sudo shoyer
+````
 
-visudo -> shoyer ALL=(ALL) NOPASSWD: ALL
+Allow your user to use sudo
 
+`visudo -> shoyer ALL=(ALL) NOPASSWD: ALL`
+
+```
 sudo apt update
 sudo apt upgrade
 
@@ -43,6 +49,25 @@ mkdir workspace
 export MERLOT_WORKSPACE=/home/shoyer/workspace
 ```
 
+## Visual Studio Code
+
+Install VS Code with the following recommended extensions
+
+https://code.visualstudio.com/download
+
+ * ESLint - Microsoft
+ * Python- Microsoft
+ * Angular Language Service
+ * Prettier - Code Formatter - Prettier
+
+ ```
+ ```
+
+## IntelliJ
+
+https://www.jetbrains.com/de-de/idea/download/?section=windows 
+
+![image](../assets/IntelliJ_OpenFileOrProject.PNG)
 
 
 
