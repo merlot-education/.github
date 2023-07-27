@@ -49,6 +49,10 @@ cd /home/shoyer
 mkdir workspace
 export MERLOT_WORKSPACE=/home/shoyer/workspace
 
+sudo apt remove nodejs
+sudo apt remove npm
+sudo apt autoremove
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs
 
 npm install -g @angular/cli@latest
 ```

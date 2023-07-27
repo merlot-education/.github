@@ -2,11 +2,11 @@
 
 ## Setup development 
 
-With POC2, MERLOT switched to WSL
+With POC2, MERLOT switched to [Windows Subsystem for Linux - WSL](https://learn.microsoft.com/en-us/windows/wsl/)
 
 ### 🐧 Setup WSL 
 
-[Developer WSL Docs](Docs/WSL.md)
+Set up WSL on your Windows 10/11 machine according to our [Developer WSL Docs](Docs/WSL.md)
 
 ### Setup locally
 All steps to setup the project locally are explained [here](Docs/SetupLocal.md)
