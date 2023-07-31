@@ -66,9 +66,6 @@ git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/cat/
  ```bash
 cd ~/workspace
 git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-api
-
-
-git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-frontend
  ```
 
 ### GXFS Example Workflows (Initial Setup)
