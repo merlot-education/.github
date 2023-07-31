@@ -1,10 +1,11 @@
 # Setup 
 
-
 ## Clone repositories
 
+⚠ Work from the WSL 
+
 ### localdeployment (Required serives)
-All required (background) services to run MERLOT are bundled in the [localdeployment](https://github.com/merlot-education/localdeployment) repository *(coming soon)*
+All required (background) services to run MERLOT are bundled in the [localdeployment](https://github.com/merlot-education/localdeployment) repository
 
  * PostgreSQL 
  * neo4j
@@ -12,73 +13,72 @@ All required (background) services to run MERLOT are bundled in the [localdeploy
  * keycloak
  * rabbitmq
 
+ It provides also all MERLOT services. With this it is possible to run the whole marketplace and just develop/debug one service in the IDE.
+
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/localdeployment.git
  ```
 
 ### The Marketplace (marketplace)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/marketplace.git
  ```
 
 ### Authentication/Authorisation/AccountManagement-Orchestrator (aaam-orchestrator)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/aaam-orchestrator.git
  ```
 
 ### Organisations-Orchestrator (organisations-orchestrator)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/organisations-orchestrator.git
  ```
 
 ### ServiceOffering-Orchestrator (serviceoffering-orchestrator)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/serviceoffering-orchestrator.git
  ```
 
 ### Contract-Orchestrator (contract-orchestrator)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/contract-orchestrator.git
  ```
 
 ### Signer tool (Initial Setup)
 This tool is needed to generate signed Verifiable Presentations which are accepted in the GXFS catalog.
  ```bash
-cd ~/Documents/GitLab
+cd ~/workspace
 git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/cat/fc-tools/signer
  ```
 
-### SD Creation Wizard API/Frontend (Initial Setup)
+### SD Creation Wizard API (Initial Setup)
  ```bash
-cd ~/Documents/GitLab
+cd ~/workspace
 git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-api
-
-
-git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-frontend
  ```
 
 ### GXFS Example Workflows (Initial Setup)
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/gxfs-catalog-example-flows
  ```
 
 ### GXFS Service Characteristics
 
  ```bash
-cd ~/Documents/GitHub
+cd ~/workspace
 git clone https://github.com/merlot-education/service-characteristics
  ```
 
@@ -95,11 +95,25 @@ sudo chmod 777 docker_data
 This compose file also assumes that the orchestrator repos are cloned "next to" the localdeployment repo in order to allow for changes to the code.
 
 
-Start the docker deployment
+Start the docker deployment. You can run all services without a parameter or select the specific services you need to run for your development.  `service1..2`
+
+* postgres (Gaia-X Catalog)
+* neo4j (Gaia-X Catalog)
+* keycloak (Gaia-X Catalog)
+* server (Gaia-X Catalog)
+* rabbitmq
+* sd-creation-wizard-api
+* contract-orchestrator
+* serviceoffering-orchestrator
+* organisations-orchestrator
+* aaam-orchestrator
+* marketplace
+
 ```bash
-cd ~/Documents/GitHub/localdeployment
-docker-compose up --build --force-recreate server
+cd ~/workspace/localdeployment
+docker-compose up --build --force-recreate service1 service2
 ```
+
 
 ### Keycloak
 Login on the admin console at [http://localhost:8080](http://localhost:8080/admin/)  and import the Realms `gxfscatalog` and  `POC1` from the https://sso.dev.merlot-education.eu/ instance 
@@ -122,18 +136,23 @@ FC_CLIENT_SECRET=Top$ecret!123
 ```
 
 Restart the localdeployment
+
+(services as parameters)
+
+* keycloak
+
+
 ```bash
 docker kill $(docker ps -q)
-docker-compose up
+docker-compose up service1 service2 ...
 ```
 
 Create an user in the POC1 realm and assing it to one or more of the roles in that realm. e. g. `OrgLegRep_10`, `OrgLegRep_30`.
 This will be your marketplace user.
 
 ### SD Creation Wizard API
-(check after migration to Eclipse, try newest relese)
 ```bash
-cd ~/Documents/GitLab/sd-creation-wizard-api
+cd ~/workspace/sd-creation-wizard-api
 git checkout ed958790fb14bd424e4148e7034195fa803d939c 
 mvn clean install
 docker build -t springio/gs-spring-boot-docker .
@@ -146,7 +165,7 @@ docker run -p 8085:8080 springio/gs-spring-boot-docker
 Build the signer tool **with the changes from the snippet comment**.
 
 ```bash
-cd ~/Documents/GitLab/signer
+cd ~/workspace/signer
 # currently the source code needs to be edited in order to use reasonable paths for the certificates:
 # replace:
 #    private static final String PATH_TO_PRIVATE_KEY = "src/main/resources/prk.ss.pem";
@@ -159,18 +178,18 @@ mvn clean install
 java -jar target/gxfsTest-0.1.0-jar-with-dependencies.jar  
 # copy this file to the example workflows directory below if needed 
 cd target
-cp gxfsTest-0.1.0-jar-with-dependencies.jar ~/Documents/GitHub/gxfs-catalog-example-flows
+cp gxfsTest-0.1.0-jar-with-dependencies.jar ~/workspace/gxfs-catalog-example-flows
 ```
 
-Create MERLOT schemas and upload to the catalogue. Then upload the organisations `~/Documents/GitHub/gxfs-catalog-example-flows/orgas.json` 
+Create MERLOT schemas and upload to the catalogue. Then upload the organisations `~/workspace/gxfs-catalog-example-flows/orgas.json` 
 
 ```bash
-cd ~/Documents/GitHub/service-characteristics/toolchain
+cd ~/workspace/service-characteristics/toolchain
 pip install -r requirements.txt
 cd ..
 sh update_sc.sh
 
-cd ~/Documents/GitHub/gxfs-catalog-example-flows
+cd ~/workspace/gxfs-catalog-example-flows
 pip install -r requirements.txt
 python3 upload_schemas_to_catalog.py
 python3 add_orgas_to_catalog.py
@@ -224,9 +243,6 @@ export KEYCLOAK_CLIENT-SECRET=Top$ecret!123
 mvn clean install
 mvn spring-boot:run
 ```
-
-## Snapshot
-If everything works, don`t forget to make a snapshot of the VM.
 
 ## IP Ports overview
 

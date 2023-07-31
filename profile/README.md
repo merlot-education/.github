@@ -1,19 +1,19 @@
 # Get Started with MERLOT 🍇
 
-## Setup development environment
+## Setup development 
 
-### VM Setup
-To provide a unified developer expierience we are working with a dedicated MERLOT developer VM and all documentation is refering to this machine.
+With POC2, MERLOT switched to [Windows Subsystem for Linux - WSL](https://learn.microsoft.com/en-us/windows/wsl/)
 
-[Developer VM Docs](Docs/DeveloperVM.md)
+### 🐧 Setup WSL 
 
-Even if we work with Ubuntu, it should work with Windows or MacOS, as well as other Linux distributions.
+Set up WSL on your Windows 10/11 machine according to our [Developer WSL Docs](../Docs/WSL.md)
 
 ### Setup locally
-All steps to setup the project locally are explained [here](Docs/SetupLocal.md)
+All steps to setup the project locally are explained [here](../Docs/SetupLocal.md)
 
 ## REST API
 All APIs of the orchestrators are described in the [REST API](Docs/API/RestAPI.md) documentation. (coming soon)
+
  * aaam-orchestrator
  * organisations-orchestrator
  * serviceoffering-orchestrator

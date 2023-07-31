@@ -1,4 +1,4 @@
-# MERLOT Development VM
+# MERLOT Development VM **[DEPRECATED]**
 
 Download and install Virtualbox 7.0.8 from: https://www.virtualbox.org/wiki/Downloads
 
