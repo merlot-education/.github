@@ -98,11 +98,25 @@ sudo chmod 777 docker_data
 This compose file also assumes that the orchestrator repos are cloned "next to" the localdeployment repo in order to allow for changes to the code.
 
 
-Start the docker deployment
+Start the docker deployment. You can run all services without a parameter or select the specific services you need to run for your development.  `service1..2`
+
+* postgres (Gaia-X Catalog)
+* neo4j (Gaia-X Catalog)
+* keycloak (Gaia-X Catalog)
+* server (Gaia-X Catalog)
+* rabbitmq
+* sd-creation-wizard-api
+* contract-orchestrator
+* serviceoffering-orchestrator
+* organisations-orchestrator
+* aaam-orchestrator
+* marketplace
+
 ```bash
 cd ~/workspace/localdeployment
-docker-compose up --build --force-recreate server
+docker-compose up --build --force-recreate service1 service2
 ```
+
 
 ### Keycloak
 Login on the admin console at [http://localhost:8080](http://localhost:8080/admin/)  and import the Realms `gxfscatalog` and  `POC1` from the https://sso.dev.merlot-education.eu/ instance 
@@ -232,9 +246,6 @@ export KEYCLOAK_CLIENT-SECRET=Top$ecret!123
 mvn clean install
 mvn spring-boot:run
 ```
-
-## Snapshot
-If everything works, don`t forget to make a snapshot of the VM.
 
 ## IP Ports overview
 
