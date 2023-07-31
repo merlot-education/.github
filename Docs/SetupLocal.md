@@ -62,7 +62,7 @@ cd ~/workspace
 git clone https://gitlab.com/gaia-x/data-infrastructure-federation-services/cat/fc-tools/signer
  ```
 
-### SD Creation Wizard API/Frontend (Initial Setup)
+### SD Creation Wizard API (Initial Setup)
  ```bash
 cd ~/workspace
 git clone https://gitlab.eclipse.org/eclipse/xfsc/self-description-tooling/sd-creation-wizard-api
