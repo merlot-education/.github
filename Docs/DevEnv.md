@@ -4,11 +4,11 @@ Checkout https://github.com/merlot-education/wsl-setup to you local machine and 
 This will install a Ubuntu WSL System with all requirements for MERLOT. (See: `merlot-wsl-setup.sh`)
 
 If not already installed, install the Windows Terminal App. (On Windows o)
-![Microsoft Store](../assets/TerminalApp.PNG)
+![Microsoft Store](/assets/TerminalApp.PNG)
 
 # MERLOT
 
-![MERLOT Terminal](../assets/WSLTerminal.PNG)
+![MERLOT Terminal](/assets/WSLTerminal.PNG)
 ```
 cd ~/workspace/mpo/localdeployment
 docker compose up -d
@@ -31,7 +31,7 @@ MERLOT Projects (To debug)
  * serviceoffering-orchestrator
  * contract-orchestrator
 
-![Running Marketplace](../assets/dockercomposeup.PNG)
+![Running Marketplace](/assets/dockercomposeup.PNG)
 
 Final step, seed data to the catalog
 ```
@@ -43,10 +43,10 @@ cd ~/workspace/mpo/gxfs-example-flows/
 ## Download devonfw
 
 Download current release of devonfw from `https://github.com/devonfw/ide/releases` and install to `D:\devonfw\MERLOT` via `setup.bat`
-![devonfw](../assets/devonfw.PNG)
+![devonfw](/assets/devonfw.PNG)
 When installing set the config repo to: https://github.com/merlot-education/ide-settings
 
-![devonfw](../assets/devonfw_settings.PNG)
+![devonfw](/assets/devonfw_settings.PNG)
 
 ## IDEs
 
@@ -54,7 +54,7 @@ When installing set the config repo to: https://github.com/merlot-education/ide-
 ```
 D:\devonfw\MERLOT\vscode.bat
 ```
-![devonfw](../assets/VSCode_WSL.PNG)
+![devonfw](/assets/VSCode_WSL.PNG)
 
 To start from commandline
 ```
@@ -79,7 +79,7 @@ Start the IntelliJ IDE and select a project to open from your WSL instance.
 ```
 D:\devonfw\MERLOT\intellij.bat
 ```
-![devonfw](../assets/IntelliJ_OpenFileOrProject.PNG)
+![devonfw](/assets/IntelliJ_OpenFileOrProject.PNG)
 
 To start from commandline
 ```

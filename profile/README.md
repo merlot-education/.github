@@ -2,7 +2,7 @@
 
 With POC2, MERLOT switched to [Windows Subsystem for Linux - WSL](https://learn.microsoft.com/en-us/windows/wsl/)
 
-Set up your development environment [Development Environment Docs](../Docs/DevEnv.md)
+Set up your development environment [Development Environment Docs](/Docs/DevEnv.md)
 
 
 ## Participate
