@@ -8,7 +8,7 @@ If not already installed, install the Windows Terminal App. (On Windows o)
 
 # MERLOT
 
-TODO hosts
+TODO hosts, usermgmt
 
 ![MERLOT Terminal](/assets/WSLTerminal.PNG)
 ```
