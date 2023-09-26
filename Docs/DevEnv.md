@@ -80,6 +80,7 @@ popd
 Start the IntelliJ IDE.
 Create a new project and adjust the following settings:
 
+TODO lombok
 
 Finally select a project from MERLOT to open from your WSL instance.
 ```
