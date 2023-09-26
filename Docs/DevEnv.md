@@ -75,7 +75,11 @@ call devon.bat intellij
 popd
 ```
 
-Start the IntelliJ IDE and select a project to open from your WSL instance.
+Start the IntelliJ IDE.
+Create a new project and adjust the following settings:
+
+
+Finally select a project from MERLOT to open from your WSL instance.
 ```
 D:\devonfw\MERLOT\intellij.bat
 ```
