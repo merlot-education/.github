@@ -8,6 +8,8 @@ If not already installed, install the Windows Terminal App. (On Windows o)
 
 # MERLOT
 
+TODO hosts
+
 ![MERLOT Terminal](/assets/WSLTerminal.PNG)
 ```
 cd ~/workspace/mpo/localdeployment
