@@ -60,6 +60,9 @@ D:\devonfw\MERLOT\vscode.bat
 
 To start from commandline
 ```
+
+TODO WSL setup
+
 cd ~/workspace/mpo/marketplace/
 
 ng serve
