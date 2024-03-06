@@ -52,10 +52,12 @@ At this point you should have the MERLOT marketplace running locally. You can ac
 
 Similarly you can familiarize yourself with the running docker stack by accessing https://localhost:9443/ and creating a local account. This is a Portainer instance which provides you with a GUI for Docker within the MERLOT WSL.
 
-You can also access the Keycloak admin panel at http://key-server:8080/admin using the user `admin` and password `admin`
+You can also access the Keycloak admin panel at http://key-server:8080/admin using the user `admin` and password `admin`.
 
-For accessing the database you can use PGAdmin at http://localhost:5050/ with user `admin@admin.admin` and password `admin`.
-In PGAdmin you then need to set up a connection with the host `postgres`, port `5432`, user `postgres` and password `postgres`
+For accessing the PostgreSQL database you can use PGAdmin at http://localhost:5050/ with user `admin@admin.admin` and password `admin`.
+In PGAdmin you then need to set up a connection with the host `postgres`, port `5432`, user `postgres` and password `postgres`.
+
+Finally you can access the Neo4j database at xxx with URL `bolt://localhost:7687`, user `neo4j` and password `neo12345`.
 
 ## Development IDE setup
 
