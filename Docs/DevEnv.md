@@ -57,7 +57,7 @@ You can also access the Keycloak admin panel at http://key-server:8080/admin usi
 For accessing the PostgreSQL database you can use PGAdmin at http://localhost:5050/ with user `admin@admin.admin` and password `admin`.
 In PGAdmin you then need to set up a connection with the host `postgres`, port `5432`, user `postgres` and password `postgres`.
 
-Finally you can access the Neo4j database at xxx with URL `bolt://localhost:7687`, user `neo4j` and password `neo12345`.
+Finally you can access the Neo4j database at http://localhost:7474/ with URL `bolt://localhost:7687`, user `neo4j` and password `neo12345`.
 
 ## Development IDE setup
 
