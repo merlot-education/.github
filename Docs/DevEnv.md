@@ -42,6 +42,8 @@ Paste the token value into the `~/workspace/mpo/localdeployment/secrets/git_auth
 
 If you also want to be able to run data transfers using EDCs in the marketplace, you can optionally also fill in the respective secrets in the `~/workspace/mpo/localdeployment/secrets/edc_ionos_secrets.txt` file.
 
+Similarly, if you want to be able to conclude contracts in the marketplace, you can fill in the respective secrets in the `~/workspace/mpo/localdeployment/secrets/s3_storage_secrets.txt` file to store generated contract PDFs.
+
 Once your secrets are set up you can run
 
     docker compose up -d
@@ -54,8 +56,8 @@ Similarly you can familiarize yourself with the running docker stack by accessin
 
 You can also access the Keycloak admin panel at http://key-server:8080/admin using the user `admin` and password `admin`.
 
-For accessing the PostgreSQL database you can use PGAdmin at http://localhost:5050/ with user `admin@admin.admin` and password `admin`.
-In PGAdmin you then need to set up a connection with the host `postgres`, port `5432`, user `postgres` and password `postgres`.
+For accessing the PostgreSQL database you can use PGAdmin at http://localhost:5050/ with no authentication.
+It should already be pre-configured to access the locally running MERLOT PostgreSQL instance.
 
 Finally you can access the Neo4j database at http://localhost:7474/ with URL `bolt://localhost:7687`, user `neo4j` and password `neo12345`.
 
